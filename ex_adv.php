@@ -1,12 +1,15 @@
 <?php
 
+/*
+  EX_ADV
+  Quick banner management
+
+  Author: AK Delfin
+
+*/
 
 
-
-
-  class adv_comp {
-
-  	function space($id) {
+  	function ex_adv_space($id) {
 
   		$items = Table('adv_items')->where('space_id', $id)->where('adv_active')->result_array();
 
@@ -57,20 +60,18 @@
   	}
 
 
-  	function img ($item) {
+  	function ex_adv_img ($item) {
 
       return '<a href="'.$item['adv_link'].'" alt="'.$item['adv_alt'].'" target="_blank"><img src="http://www.argumenti.ru/images/partners/'.$item['item_id'].'.'.$item['adv_file'].'" width="'.$item['adv_width'].'" height="'.$item['adv_height'].'"></a>';
 
   	}
 
-    function swf ($item) {
+    function ex_adv_swf ($item) {
           
       $file = 'http://www.argumenti.ru/images/partners/'.$item['item_id'].'.'.$item['adv_file'];
       return "<object classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 codebase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0 width=".$item['adv_width']." height=".$item['adv_height']."><param name=movie value='".$file."'><param name=quality value=high><embed src='".$file."' quality=high pluginspage=http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash type=application/x-shockwave-flash width=".$item['adv_width']." height=".$item['adv_height']."></embed></object>";
       
     }
-
-
 
     
 
