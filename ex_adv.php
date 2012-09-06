@@ -18,7 +18,8 @@
 
         /*выбираем текущий элеменt*/
         foreach ($items as $item) {
-  				$url = $_SERVER['REQUEST_URI'];
+  				
+          $url = $_SERVER['REQUEST_URI'];
           if ($item['adv_alias'] == '')  //сквозной элемент
 	  				$arr[] = $item;
   				else {
@@ -33,8 +34,7 @@
 
   					}
   					elseif (mb_strpos($url, $item['adv_alias']) !== FALSE) 
-              $arr[] = $item;
-             
+              $arr[] = $item;   
   				}	
 
   			if (is_array($arr)) { //получаем текущий элемент
@@ -61,19 +61,12 @@
 
 
   	function ex_adv_img ($item) {
-
       return '<a href="'.$item['adv_link'].'" alt="'.$item['adv_alt'].'" target="_blank"><img src="'.ADVLINK.$item['item_id'].'.'.$item['adv_file'].'" width="'.$item['adv_width'].'" height="'.$item['adv_height'].'"></a>';
-
   	}
 
-    function ex_adv_swf ($item) {
-          
+    function ex_adv_swf ($item) {      
       $file = ADVLINK.$item['item_id'].'.'.$item['adv_file'];
-      return "<object classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 codebase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0 width=".$item['adv_width']." height=".$item['adv_height']."><param name=movie value='".$file."'><param name=quality value=high><embed src='".$file."' quality=high pluginspage=http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash type=application/x-shockwave-flash width=".$item['adv_width']." height=".$item['adv_height']."></embed></object>";
-      
+      return "<object classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 codebase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0 width=".$item['adv_width']." height=".$item['adv_height']."><param name=movie value='".$file."'><param name=quality value=high><embed src='".$file."' quality=high pluginspage=http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash type=application/x-shockwave-flash width=".$item['adv_width']." height=".$item['adv_height']."></embed></object>";    
     }
 
-    
-
-
-  }
+  
