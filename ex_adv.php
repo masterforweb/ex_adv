@@ -19,7 +19,7 @@
         /*выбираем текущий элеменt*/
         foreach ($items as $item) {
   				
-          $url = $_SERVER['REQUEST_URI'];
+          $url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           if ($item['adv_alias'] == '')  //сквозной элемент
 	  				$arr[] = $item;
   				else {
