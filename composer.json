@@ -1,0 +1,16 @@
+{
+    "name": "akdelf/ex_adv",
+    "description": "web fullpage save to html file",
+    "keywords": ["cache","php","file"],
+    "homepage": "http://github.com/akdelf/ex_adv",
+    "license": "Zlib",
+    "authors": [
+        {
+            "name": "AK Delf",
+            "homepage": "http://github.com/akdelf/ex_adv"
+        }
+    ],
+    "require": {
+        "php": ">=5.0.0"
+    }
+}
